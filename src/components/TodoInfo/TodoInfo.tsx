@@ -1,1 +1,18 @@
-export const TodoInfo = () => {};
+import React from "react";
+import { Post } from "../types/Post";
+
+type Props = {
+  posts: Post[];
+};
+
+export const TodoInfo: React.FC<Props> = ({ posts }) => {
+  return posts.map(post => (
+    <article key={post.id} data-id="1" className="TodoInfo TodoInfo--completed">
+      <h2 className="TodoInfo__title">{post.title}</h2>
+
+      <a className="UserInfo" href="mailto:Sincere@april.biz">
+        {post.user && <p>{post.user.name}</p>}
+      </a>
+    </article>
+  ));
+};
