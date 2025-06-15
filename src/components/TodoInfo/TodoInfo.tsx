@@ -7,10 +7,14 @@ type Props = {
 
 export const TodoInfo: React.FC<Props> = ({ posts }) => {
   return posts.map(post => (
-    <article key={post.id} data-id="1" className="TodoInfo TodoInfo--completed">
+    <article
+      key={post.id}
+      data-id={post.id}
+      className="TodoInfo TodoInfo--completed"
+    >
       <h2 className="TodoInfo__title">{post.title}</h2>
 
-      <a className="UserInfo" href={post.user?.email}>
+      <a className="UserInfo" href={`mailto:${post.user?.email}`}>
         {post.user && <p>{post.user.name}</p>}
       </a>
     </article>
