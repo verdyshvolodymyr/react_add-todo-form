@@ -62,11 +62,11 @@ export const App = () => {
             type="text"
             data-cy="titleInput"
             value={title}
-            onChange={event => (
-              setTitle(event.target.value),
-              setHasTitleError(false),
-              setHasNewUser(false)
-            )}
+            onChange={event => {
+              setTitle(event.target.value);
+              setHasTitleError(false);
+              setHasNewUser(false);
+            }}
           />
           {hasTitleError && <span className="error">Please enter a title</span>}
         </div>
@@ -75,11 +75,11 @@ export const App = () => {
           <select
             data-cy="userSelect"
             value={newUser}
-            onChange={(event: React.ChangeEvent<HTMLSelectElement>) => (
-              setNewUser(+event.target.value),
-              setHasTitleError(false),
-              setHasNewUser(false)
-            )}
+            onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+              setNewUser(+event.target.value);
+              setHasTitleError(false);
+              setHasNewUser(false);
+            }}
           >
             <option value={0}>Choose a user</option>
 

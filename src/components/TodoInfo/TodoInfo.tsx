@@ -10,7 +10,7 @@ export const TodoInfo: React.FC<Props> = ({ posts }) => {
     <article key={post.id} data-id="1" className="TodoInfo TodoInfo--completed">
       <h2 className="TodoInfo__title">{post.title}</h2>
 
-      <a className="UserInfo" href="mailto:Sincere@april.biz">
+      <a className="UserInfo" href={post.user?.email}>
         {post.user && <p>{post.user.name}</p>}
       </a>
     </article>
